@@ -241,6 +241,7 @@ int main(int argc, char *argv[])
 
 	// run main window
 	// it will block the main thread until closed
+	
 	visualizer.run();
 
 	// join processing thread

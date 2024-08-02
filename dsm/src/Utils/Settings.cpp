@@ -98,8 +98,8 @@ namespace dsm
 
 		// Parallelization
 		this->blockUntilMapped = false;
-		this->singleThreaded = true;									
-		this->mappingThreads = 6;										// 6
+		this->singleThreaded = false;									
+		this->mappingThreads = 16;										// 6
 
 		this->minimizeMemory = false;
 

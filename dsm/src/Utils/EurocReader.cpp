@@ -105,10 +105,16 @@ namespace dsm
 			std::string line;
 			std::getline(infile, line);
 
-			if (!line.empty())
+			if (!line.empty() && line[0] != '#')
 			{
-				this->files.push_back(imagePath + "/" + line + ".png");
-				this->timestamps.push_back(std::atof(line.c_str()) / 1e9);		// transform to seconds
+				std::vector<std::string> parts;
+				std::stringstream ss(line);
+				std::string part;
+				while (std::getline(ss, part, ',')) {
+					parts.push_back(part);
+				} 
+				this->files.push_back(imagePath + "/" + parts[1]);
+				this->timestamps.push_back(std::atof(parts[0].c_str()) / 1e7);		// transform to seconds
 			}
 		}
 
