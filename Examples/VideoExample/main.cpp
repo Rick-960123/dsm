@@ -117,6 +117,7 @@ namespace dsm
 				{
 					double time = (double)cv::getTickCount();
 
+					cv::resize(image, image, cv::Size(640, 480));
 					//gray image from source
 					if (image.channels() == 3)
 					{
